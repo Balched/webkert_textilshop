@@ -1,1 +1,17 @@
-<p>shop works!</p>
+<div class="shop-container">
+    <h1>Termékek</h1>
+    <div *ngIf="products.length === 0">
+      <p>Nincs elérhető termék.</p>
+    </div>
+  
+    <div class="product-list" *ngIf="products.length > 0" >
+      <div class="product-card" *ngFor="let product of products" highlightOnHover>
+        <img [src]="product.imageUrl" [alt]="product.name" />
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.description }}</p>
+        <strong>{{ product.price }} Ft</strong>
+        <br><button (click)="addToCart(product)" mat-raised-button color="blue">Kosárba rakom</button>
+      </div>
+    </div>
+  </div>
+  
