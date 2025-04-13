@@ -2,10 +2,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
     background-color: #2c3e50;
     color: white;
-  }
+    z-index: 2;
+    height: 10%;
+    }
   
   .navbar .logo a {
     font-size: 2em;
@@ -29,10 +30,11 @@
   
   .navbar .nav-link:hover {
     text-decoration: underline;
+    text-decoration-color: #005ebb;
   }
   
   .navbar .nav-link.active {
-    border-bottom: 2px solid #e74c3c;
+    color: #005ebb;
   }
   
   /* Mobile Styles */
@@ -43,36 +45,11 @@
       width: 100%;
       background-color: #2c3e50;
       position: absolute;
-      top: 70px;
       left: 0;
-      padding: 10px 0;
     }
   
-    .navbar .nav-links.active {
-      display: flex;
-    }
-  
-    .navbar .nav-link {
-      font-size: 1.5em;
-      margin: 15px 0;
-      text-align: center;
-    }
+    
   }
-
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    padding: 10px 20px;
-    color: white;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-  }
-  
   .nav-links li {
     margin: 0 15px;
   }
@@ -84,14 +61,9 @@
   }
   
   .nav-link:hover {
-    color: #f39c12;
+    color: #005ebb;
   }
   
-  .cart-menu {
-    width: 300px;
-    padding: 10px;
-    z-index: 2;
-  }
   
   .cart-item {
     display: flex;
@@ -106,42 +78,20 @@
     margin-right: 10px;
   }
   
-  .total {
-    margin-top: 10px;
-    font-weight: bold;
-  }
-  
-  button {
-    margin-top: 10px;
-  }
-  
   .cart-dropdown {
     position: absolute;
-    top: 50px; /* A navbar alatt jelenjen meg */
-    right: 20px;
+    right: 0px;
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 15px;
     border-radius: 8px;
-    width: 300px;
-    max-height: 400px;
+    width: 400px;
+    max-height: 500px;
     overflow-y: auto;
     z-index: 2;
 
   }
-  
-  .cart-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .cart-item button {
-    background: black;
-    border: none;
-    cursor: pointer;
-  }
+ 
   
   .cart-count {
     position: absolute;
@@ -154,23 +104,19 @@
     font-size: 12px;
   }
   
+  .cart-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+
   button {
-    background-color: #00796b;
+    background-color: #005ebb;
     color: white;
     border: none;
     border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.1s ease;
-  }
-  
-  button:hover {
-    background-color: #004d40;
-    transform: translateY(-2px);
-  }
-  
-  button:active {
-    transform: translateY(0);
-    background-color: #00695c;
   }
   

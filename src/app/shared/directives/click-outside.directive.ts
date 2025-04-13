@@ -11,7 +11,13 @@ export class ClickOutsideDirective {
 
   @HostListener('document:click', ['$event'])
   onClick(event: MouseEvent): void {
-    if (!this.el.nativeElement.contains(event.target)) {
+    const target = event.target as HTMLElement;
+
+    const clickedInside = this.el.nativeElement.contains(target);
+    const clickedKosarButton = target.closest('#kosar');
+    const clickedAddToCart = target.closest('.add-to-cart');
+
+    if (!clickedInside && !clickedKosarButton && !clickedAddToCart) {
       this.clickOutside.emit();
     }
   }

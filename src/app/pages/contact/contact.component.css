@@ -1,0 +1,70 @@
+.contact-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #fafafa;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .contact-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  button {
+    align-self: center;
+    margin-top: 20px;
+  }
+  
+  footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+  }
+
+  mat-card {
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 25%;
+    display: flex;
+    max-width: 600px;
+    margin: 40px auto;
+    border-radius: 12px;
+    background-color: #fafafa;
+  }
+  
+  mat-card-header {
+    background-color: #f8f8f8;
+    padding: 16px;
+  }
+  
+  mat-card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #444;
+  }
+  
+  mat-card-content {
+    padding: 16px;
+    font-size: 1em;
+    color: #555;
+  }
+  
+  mat-card-content a {
+    color: #005ebb;
+    text-decoration: none;
+  }
+  
+  mat-card-content a:hover {
+    text-decoration: underline;
+  }

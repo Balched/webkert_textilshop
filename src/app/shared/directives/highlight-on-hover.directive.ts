@@ -10,7 +10,7 @@ export class HighlightOnHoverDirective {
   @HostListener('mouseenter') onMouseEnter() {
     this.renderer.setStyle(this.el.nativeElement, 'background-color', '#f2f0f0');
   }
-  //e1e1fa
+
   @HostListener('mouseleave') onMouseLeave() {
     this.renderer.setStyle(this.el.nativeElement, 'background-color', 'rgb(255, 255, 255)');
   }

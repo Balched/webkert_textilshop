@@ -1,1 +1,67 @@
-<p>contact works!</p>
+<div class="contact-container">
+    <h1>Kapcsolatfelvétel</h1>
+
+   
+    <form [formGroup]="contactForm" (ngSubmit)="submitMessage()" class="contact-form">
+      <mat-form-field appearance="outline">
+        <mat-label>Név</mat-label>
+        <input matInput formControlName="customerName" placeholder="Teljes név">
+        <mat-error *ngIf="contactForm.get('customerName')?.invalid && contactForm.get('customerName')?.touched">
+          Adj meg egy érvényes nevet.
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="customerEmail" placeholder="példa@email.com">
+        <mat-error *ngIf="contactForm.get('customerEmail')?.invalid && contactForm.get('customerEmail')?.touched">
+          Adj meg egy érvényes email címet.
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Üzenet</mat-label>
+        <textarea matInput formControlName="message" placeholder="Írd ide az üzeneted" rows="5"></textarea>
+        <mat-error *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
+          Az üzenet nem lehet üres és legalább 10 karakter hosszú.
+        </mat-error>
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" type="submit">Küldés</button>
+    </form>
+  </div>
+
+  <section class="contact-info">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Telefonszám</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>+36 1 234 5678</p>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Email</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p><a href="mailto:info@textilshop.hu">info&#64;textilshop.hu</a></p>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Cím</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>1051 Budapest, Váci utca 10.</p>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+
+  
+  <footer>
+    <p>© 2025 Premium Textile Shop | All Rights Reserved</p>
+  </footer>
