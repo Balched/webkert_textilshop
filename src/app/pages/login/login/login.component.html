@@ -1,0 +1,21 @@
+<h1>Bejelentkezés</h1>
+<form [formGroup]="form" (ngSubmit)="login()">
+  <input formControlName="email" type="email" placeholder="Email">
+  <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched" style="color:red;">
+    Adj meg érvényes email címet.
+  </div>
+
+  <input formControlName="password" type="password" placeholder="Jelszó">
+  <div *ngIf="form.get('password')?.invalid && form.get('password')?.touched" style="color:red;">
+    A jelszó kötelező.
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">Belépek</button>
+</form>
+
+<p *ngIf="error" style="color:red;">{{ error }}</p>
+
+
+<footer>
+  <p>© 2025 Premium Textile Shop | All Rights Reserved</p>
+</footer>

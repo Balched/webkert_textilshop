@@ -13,6 +13,7 @@ import { MatTabsModule } from '@angular/material/tabs';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  
   ngOnInit(): void {}
 
   navigateToAbout(): void {

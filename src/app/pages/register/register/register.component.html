@@ -1,0 +1,21 @@
+<h1>Regisztráció</h1>
+<form [formGroup]="form" (ngSubmit)="register()">
+  <input formControlName="email" type="email" placeholder="Email">
+  <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched" style="color:red;">
+    Érvényes emailt adj meg.
+  </div>
+
+  <input formControlName="password" type="password" placeholder="Jelszó">
+  <div *ngIf="form.get('password')?.invalid && form.get('password')?.touched" style="color:red;">
+    A jelszónak legalább 6 karakteresnek kell lennie.
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">Regisztrálok</button>
+</form>
+
+<p *ngIf="error" style="color:red;">{{ error }}</p>
+<p *ngIf="success" style="color:green;">{{ success }}</p>
+
+<footer>
+  <p>© 2025 Premium Textile Shop | All Rights Reserved</p>
+</footer>
