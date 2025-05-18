@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../../models/product/product.component'; // Az 'Product' modell importálása
+import { Product } from '../../models/product/product.component';
 
 @Injectable({
   providedIn: 'root'

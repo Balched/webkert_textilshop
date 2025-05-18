@@ -12,7 +12,8 @@
     <li><a routerLink="/about" routerLinkActive="active" class="nav-link">Rólunk</a></li>
     <li><a routerLink="/shop" routerLinkActive="active" class="nav-link">Vásárlás</a></li>
     <li><a routerLink="/contact" routerLinkActive="active" class="nav-link">Elérhetőségek</a></li>
-    <li><a routerLink="/profil" routerLinkActive="active" class="nav-link">Profil</a></li>
+    <li><a routerLink="/admin-products" routerLinkActive="active" class="nav-link">Admin</a></li>
+    
     <li *ngIf="!isLoggedIn"><a routerLink="/register" routerLinkActive="active" class="nav-link">Regisztráció</a></li>
     <li *ngIf="!isLoggedIn"><a routerLink="/login" routerLinkActive="active" class="nav-link">Bejelentkezés</a></li>
     <li *ngIf="isLoggedIn">

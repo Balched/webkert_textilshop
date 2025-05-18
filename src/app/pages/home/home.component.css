@@ -150,8 +150,6 @@ footer {
   margin-top: 40px;
 }
 
-/* Reszponzív módosítások */
-
 @media (max-width: 900px) {
   .hero-image {
     max-width: 40%;

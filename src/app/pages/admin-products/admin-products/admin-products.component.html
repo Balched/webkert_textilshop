@@ -1,0 +1,78 @@
+<div class="admin-container">
+    <h1>Termékek kezelése</h1>
+  
+    <form #productForm="ngForm" (ngSubmit)="addProduct()">
+      <mat-form-field appearance="outline">
+        <mat-label>Név</mat-label>
+        <input matInput name="name" [(ngModel)]="newProduct.name" required />
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Leírás</mat-label>
+        <textarea matInput name="description" [(ngModel)]="newProduct.description" required></textarea>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Ár (Ft)</mat-label>
+        <input matInput type="number" name="price" [(ngModel)]="newProduct.price" required />
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Kép URL</mat-label>
+        <input matInput name="imageUrl" [(ngModel)]="newProduct.imageUrl" required />
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" type="submit">Hozzáadás</button>
+    </form>
+    <hr />
+  
+<div *ngIf="editingProduct">
+    <h2>Termék szerkesztése</h2>
+    <form (ngSubmit)="updateProduct()">
+      <mat-form-field appearance="outline">
+        <mat-label>Név</mat-label>
+        <input matInput [(ngModel)]="editingProduct.name" name="editName" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Leírás</mat-label>
+        <textarea matInput [(ngModel)]="editingProduct.description" name="editDesc" required></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Ár</mat-label>
+        <input matInput type="number" [(ngModel)]="editingProduct.price" name="editPrice" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Kép URL</mat-label>
+        <input matInput [(ngModel)]="editingProduct.imageUrl" name="editImg" required />
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit">Mentés</button>
+      <button mat-raised-button type="button" (click)="cancelEdit()">Mégsem</button>
+    </form>
+  </div>
+
+    <div class="product-list" *ngIf="products$ | async as products">
+      <mat-card *ngFor="let product of products" class="product-card" highlightOnHover>
+        <img [src]="getImageUrl(product)" alt="{{ product.name }}" />
+        <mat-card-title>{{ product.name }}</mat-card-title>
+        <mat-card-content>
+          <p>{{ product.description }}</p>
+          <strong>{{ product.price }} Ft</strong>
+        </mat-card-content>
+  
+        <button mat-icon-button color="accent" (click)="editProduct(product)">
+          <mat-icon>edit</mat-icon>
+        </button>
+  
+        <button mat-icon-button color="warn" (click)="deleteProduct(product.id ?? '')">
+            <mat-icon>delete</mat-icon>
+          </button>
+      </mat-card>
+    </div>
+  
+    
+  </div>
+  

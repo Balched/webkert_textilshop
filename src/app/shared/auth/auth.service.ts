@@ -1,9 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updateEmail, updatePassword, User , EmailAuthProvider, reauthenticateWithCredential} from '@angular/fire/auth';
+import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updateEmail, updatePassword, User , EmailAuthProvider, reauthenticateWithCredential, onAuthStateChanged} from '@angular/fire/auth';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  constructor(private auth: Auth) {}
+  private userSubject = new BehaviorSubject<User | null>(null);
+  user$ = this.userSubject.asObservable();
+
+  constructor(private auth: Auth) {
+    onAuthStateChanged(this.auth, (user) => {
+      this.userSubject.next(user);
+    });
+  }
 
   register(email: string, password: string) {
     return createUserWithEmailAndPassword(this.auth, email, password);
@@ -19,6 +27,10 @@ export class AuthService {
 
   get user() {
     return this.auth.currentUser;
+  }
+
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('user');
   }
 
   

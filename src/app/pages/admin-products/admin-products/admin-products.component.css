@@ -1,0 +1,85 @@
+.admin-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  font-family: Arial, sans-serif;
+  color: #2c3e50;
+  text-align: center;
+}
+
+/* Űrlap gomb középen */
+form button {
+  align-self: center;
+}
+
+/* Központozott terméklista */
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+/* Termékkártyák */
+.product-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  width: 260px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+  transition: transform 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+/* Gombok jobban láthatóan, középre pozicionálva */
+.product-card button[color="warn"],
+.product-card button[color="accent"] {
+  background-color: rgba(255,255,255,0.95);
+  border-radius: 6px;
+  padding: 6px 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.product-card button:hover {
+  transform: scale(1.1);
+}
+
+.product-card button[color="accent"] {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  color: #2980b9;
+}
+
+.product-card button[color="warn"] {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  color: #e74c3c;
+}
+
+/* Responsive támogatás */
+@media (max-width: 600px) {
+  .product-card {
+    width: 90%;
+  }
+}

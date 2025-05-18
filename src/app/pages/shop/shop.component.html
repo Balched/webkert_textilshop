@@ -1,20 +1,27 @@
 <div class="shop-container">
-    <h1>Termékek</h1>
+  <h1>Termékek</h1>
+
+  <div *ngIf="(products$ | async) as products">
     <div *ngIf="products.length === 0">
       <p>Nincs elérhető termék.</p>
     </div>
-  
-    <div class="product-list" *ngIf="products.length > 0" >
+
+    <div class="product-list" *ngIf="products.length > 0">
       <div class="product-card" *ngFor="let product of products" highlightOnHover>
-        <img [src]="product.imageUrl" [alt]="product.name" />
+        <img [src]="getImageUrl(product)" [alt]="product.name" />
         <h2>{{ product.name }}</h2>
         <p>{{ product.description }}</p>
-        <strong>{{ product.price }} Ft</strong>
-        <br><button (click)="addToCart(product)" mat-raised-button color="blue" class="add-to-cart">Kosárba rakom</button>
+        <p [style.color]="product.price | priceColor">
+          {{ product.price | priceFormat }}
+        </p><br />
+        <button (click)="addToCart(product)" mat-raised-button color="primary" class="add-to-cart">
+          Kosárba rakom
+        </button>
       </div>
     </div>
   </div>
-  
-  <footer>
-    <p>© 2025 Premium Textile Shop | All Rights Reserved</p>
-  </footer>
+</div>
+
+<footer>
+  <p>© 2025 Premium Textile Shop | All Rights Reserved</p>
+</footer>

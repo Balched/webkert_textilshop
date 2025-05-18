@@ -1,0 +1,27 @@
+.profil-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: #f3f3f3;
+    border-radius: 8px;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 8px;
+    resize: vertical;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    margin-top: 10px;
+    background-color: #005ebb;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
